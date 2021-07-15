@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Genres from "../../components/Genres/Genres";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import useGenre from "../../hooks/useGenre";
+import CustomPagination from "../../components/Pagination/CustomPagination";
 
 
 const Series = () => {
@@ -52,6 +53,9 @@ const Series = () => {
             />
           ))}
           </div>
+          {numOfPages > 1 && (
+        <CustomPagination setPage={setPage} numOfPages={numOfPages} />
+      )}
         </div>
     );
 };

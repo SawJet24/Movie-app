@@ -15,6 +15,7 @@ import "./ContentModal.css";
 import Carousel from "../Carousel/Carousel"; 
 
 
+
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
@@ -24,9 +25,10 @@ const useStyles = makeStyles((theme) => ({
   paper: {
       width: "90%",
       height: "80%",
-    backgroundColor: "#39445a",
+    backgroundColor: "#613f75",
     border: '1px solid #282c34',
     borderRadius: 10,
+    color:'white',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(1, 1, 3),
   },
@@ -58,18 +60,24 @@ export default function ContentModal({children, media_type, id}) {
         `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     );
     console.log(data);
-    setVideo(data.results [0]?.key);
+     // eslint-disable-next-line
+    setVideo(data.results[0]?.key);
 };
 
 useEffect(() => {
     fetchData();
     fetchVideo();
+    // eslint-disable-next-line
 }, []);
 
   return (
    <>   
     <div
-      className = "media" onClick={handleOpen}>
+      className = "media" 
+      onClick={handleOpen}
+      color='inherit'
+      style={{cursor:'pointer'}}
+      >
         {children}
       </div>
       <Modal
