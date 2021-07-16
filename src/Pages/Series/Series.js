@@ -7,7 +7,7 @@ import CustomPagination from "../../components/Pagination/CustomPagination";
 
 
 const Series = () => {
-    const [genres, setGenres] = useState([]);
+  const [genres, setGenres] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
